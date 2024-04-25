@@ -8,14 +8,14 @@ SRCS := $(wildcard $(SRCDIR)/*.cpp)
 OBJS := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCS))
 
 # Default rule
-build: $(OBJS)
+all: $(OBJS)
 
 # Rule to compile object files
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-all:
+build:
 	$(CXX) $(OBJS) $(CXXFLAGS) main.cpp
 
 # Clean rule
